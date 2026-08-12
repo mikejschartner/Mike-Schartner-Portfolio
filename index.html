@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -519,6 +519,352 @@ z-index:2;
 
 }
 
+.panel ul{
+
+line-height:1.85;
+
+color:#c9c9c9;
+
+position:relative;
+
+z-index:2;
+
+margin:0 0 0 20px;
+
+}
+
+.panel li{
+
+margin-bottom:8px;
+
+}
+
+.panel a{
+
+color:#ffffff;
+
+text-decoration:underline;
+
+text-underline-offset:3px;
+
+}
+
+.panel a:hover{
+
+opacity:.85;
+
+}
+
+/* FEATURED PROJECTS */
+
+.featured-project{
+
+grid-column:1 / -1;
+
+padding:0;
+
+overflow:hidden;
+
+}
+
+.featured-inner{
+
+padding:35px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.featured-header{
+
+display:flex;
+
+flex-wrap:wrap;
+
+align-items:flex-start;
+
+justify-content:space-between;
+
+gap:24px;
+
+margin-bottom:28px;
+
+}
+
+.featured-badge{
+
+display:inline-block;
+
+padding:8px 14px;
+
+background:rgba(168,85,247,.12);
+
+border:1px solid rgba(168,85,247,.35);
+
+border-radius:999px;
+
+font-size:12px;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+color:#d8b4fe;
+
+margin-bottom:14px;
+
+}
+
+.featured-subtitle{
+
+font-size:17px;
+
+color:#bdbdbd;
+
+max-width:920px;
+
+line-height:1.8;
+
+margin-top:10px;
+
+}
+
+.project-media{
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:24px;
+
+margin-bottom:28px;
+
+}
+
+.media-frame{
+
+background:rgba(0,0,0,.35);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+overflow:hidden;
+
+min-height:220px;
+
+position:relative;
+
+}
+
+.media-frame img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+min-height:220px;
+
+}
+
+.media-placeholder{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:28px;
+
+min-height:220px;
+
+color:#9ca3af;
+
+line-height:1.7;
+
+font-size:14px;
+
+background:linear-gradient(135deg, rgba(168,85,247,.08), rgba(59,130,246,.08));
+
+}
+
+.architecture-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:18px;
+
+margin:24px 0;
+
+}
+
+.arch-card{
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.07);
+
+border-radius:18px;
+
+padding:18px 20px;
+
+}
+
+.arch-card h4{
+
+font-size:16px;
+
+margin-bottom:10px;
+
+color:#f3f4f6;
+
+}
+
+.arch-card p{
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#b5b5b5;
+
+margin:0;
+
+}
+
+.project-tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin:18px 0 22px;
+
+}
+
+.project-tag{
+
+padding:8px 14px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:999px;
+
+font-size:12px;
+
+color:#e5e7eb;
+
+}
+
+.project-links{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:14px;
+
+margin-top:8px;
+
+}
+
+.project-links .btn{
+
+font-size:14px;
+
+padding:12px 22px;
+
+}
+
+details.project-details{
+
+margin-top:24px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding-top:18px;
+
+}
+
+details.project-details summary{
+
+cursor:pointer;
+
+font-weight:600;
+
+color:#f3f4f6;
+
+list-style:none;
+
+}
+
+details.project-details summary::-webkit-details-marker{
+
+display:none;
+
+}
+
+details.project-details[open] summary{
+
+margin-bottom:16px;
+
+}
+
+.pipeline-steps{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:14px;
+
+margin-top:16px;
+
+}
+
+.pipeline-step{
+
+padding:16px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.07);
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#c9c9c9;
+
+}
+
+.pipeline-step strong{
+
+display:block;
+
+color:#fff;
+
+margin-bottom:6px;
+
+}
+
 /* TIMELINE */
 
 .timeline{
@@ -676,6 +1022,18 @@ font-size:44px;
 .section-title{
 
 font-size:38px;
+
+}
+
+.project-media{
+
+grid-template-columns:1fr;
+
+}
+
+.featured-header{
+
+flex-direction:column;
 
 }
 
@@ -865,10 +1223,7 @@ AI & Cloud Passion
 </h3>
 
 <p>
-Passionate about AI automation,
-cloud engineering,
-intelligent infrastructure,
-and the future of scalable connected systems.
+Built and shipped <strong>WMFarming</strong>, a dual-platform automation suite (Windows + Android) using OCR pipelines, rule-based decision logic, and GitHub Actions release automation with in-app updaters.
 </p>
 
 </div>
@@ -994,7 +1349,7 @@ Programming
 </h3>
 
 <p>
-Python • HTML • CSS • JavaScript • Automation • Software Development
+Python • HTML • CSS • JavaScript • Kotlin • Automation • OCR • GitHub Actions • Software Development
 </p>
 
 </div>
@@ -1040,6 +1395,171 @@ Projects & Portfolio
 
 <div class="panel-grid">
 
+<div class="panel featured-project">
+
+<div class="featured-inner">
+
+<div class="featured-header">
+
+<div>
+
+<div class="featured-badge">Featured Side Project</div>
+
+<h3>
+WMFarming
+</h3>
+
+<p class="featured-subtitle">
+Dual-platform automation suite I designed, shipped, and maintain — a Windows desktop app and an Android companion that use OCR, calibrated screen regions, and rule-based decision logic to automate repetitive farming workflows, with GitHub Actions CI/CD and in-app auto-updates on both platforms.
+</p>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://github.com/mikejschartner/WhiskeyMikesFarminTrap" target="_blank" rel="noopener" class="btn btn-primary">
+Desktop Repo
+</a>
+
+<a href="https://github.com/mikejschartner/WMPokeTrap" target="_blank" rel="noopener" class="btn btn-secondary">
+Android Repo
+</a>
+
+</div>
+
+</div>
+
+<div class="project-media">
+
+<div class="media-frame">
+
+<img src="assets/wmfarming-demo.gif" alt="WMFarming desktop and mobile demo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+<div class="media-placeholder" style="display:none;">
+Demo GIF placeholder<br>
+Add <strong>assets/wmfarming-demo.gif</strong> to show desktop + mobile automation in action.
+</div>
+
+</div>
+
+<div class="media-frame">
+
+<div class="media-placeholder">
+CI/CD pipeline: push to <strong>main</strong> builds artifacts; tag <strong>vX.Y.Z</strong> publishes GitHub Releases with fixed updater asset names on both repos.
+</div>
+
+</div>
+
+</div>
+
+<div class="project-tags">
+
+<div class="project-tag">Python</div>
+<div class="project-tag">Kotlin</div>
+<div class="project-tag">OCR</div>
+<div class="project-tag">OpenCV</div>
+<div class="project-tag">GitHub Actions</div>
+<div class="project-tag">PyInstaller</div>
+<div class="project-tag">Android Accessibility</div>
+<div class="project-tag">Jetpack Compose</div>
+<div class="project-tag">CI/CD</div>
+
+</div>
+
+<div class="architecture-grid">
+
+<div class="arch-card">
+
+<h4>What it does</h4>
+
+<p>
+Calibrates screen regions for battle UI, opponent name, HP bar, battle text, and shiny markers. Each encounter is captured, interpreted, and acted on automatically on PC (mouse/keyboard) or phone (Accessibility gestures + overlay controls).
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>OCR pipeline</h4>
+
+<p>
+Uses RapidOCR on desktop and Accessibility screenshots on Android to read opponent names and battle messages. Fuzzy species matching with guardrails reduces false positives from visually similar names.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Decision engine</h4>
+
+<p>
+Rule-based state machine: shiny override, target match, flee vs catch path, False Swipe until HP threshold (pixel-based bar analysis), Poké Ball loop with breakout retry, and separate modes that never run at the same time.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Release automation</h4>
+
+<p>
+Two repos with parallel pipelines: Windows PyInstaller builds and Android Gradle builds publish <strong>latest.json</strong> + binaries. In-app updaters poll GitHub Releases and install updates without manual file sharing.
+</p>
+
+</div>
+
+</div>
+
+<details class="project-details">
+
+<summary>Read the full technical breakdown</summary>
+
+<p>
+<strong>Platform architecture.</strong> WMFarming ships as two products sharing the same product logic but different input stacks. The desktop build is Python with a mod-menu GUI, hotkeys, and PyInstaller packaging. The Android build is Kotlin with Jetpack Compose, an Accessibility Service for capture and taps, and a floating overlay for start/pause/stop while the game stays foregrounded.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Computer vision workflow.</strong> Users calibrate regions once; the bot clips those areas each loop. OCR extracts text from name and message regions. HP is estimated separately through color sampling on the HP bar (not OCR), because pixel thresholds are more reliable for progress detection than reading numbers from noisy UI art.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Decision logic.</strong> On each encounter the engine evaluates: Is the opponent a configured target species? Is a shiny marker present? Should grind mode KO instead of flee? If catch-eligible, the bot chains False Swipe until HP drops below threshold, switches to Poké Balls, and retries if the ball breaks out. Battle messages confirm caught/fled states before the next loop. Modes like farm automation, PvP helper OCR, and auto-entry are isolated so behavior stays predictable.
+</p>
+
+<div class="pipeline-steps">
+
+<div class="pipeline-step">
+<strong>1. CI on push</strong>
+GitHub Actions builds on every push to main — Windows runner for the desktop exe, Ubuntu runner for the APK.
+</div>
+
+<div class="pipeline-step">
+<strong>2. CD on tag</strong>
+Pushing a version tag creates a GitHub Release with the exact asset names existing updaters expect.
+</div>
+
+<div class="pipeline-step">
+<strong>3. In-app update</strong>
+Each client checks Releases, compares versionCode/versionName from latest.json, downloads, and applies the update.
+</div>
+
+<div class="pipeline-step">
+<strong>4. Stable repos</strong>
+Repo names stay fixed so friends' auto-update configs keep working across releases.
+</div>
+
+</div>
+
+<p style="margin-top:14px;">
+<strong>Why this project matters for my portfolio.</strong> It combines automation engineering, computer vision, cross-platform product design, and cloud-style release pipelines — the same skills I talk about in cloud and intelligent systems work, backed by repos and shipped artifacts instead of placeholder text.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
 <div class="panel">
 
 <h3>
@@ -1052,6 +1572,12 @@ CSS,
 and JavaScript featuring modern layouts and responsive functionality.
 </p>
 
+<p style="margin-top:14px;">
+<a href="https://github.com/mikejschartner/book-haven-bookstore" target="_blank" rel="noopener">
+View on GitHub
+</a>
+</p>
+
 </div>
 
 <div class="panel">
@@ -1061,27 +1587,13 @@ Interactive Portfolio
 </h3>
 
 <p>
-Modern futuristic glassmorphism portfolio website
-focused on immersive UI,
-motion,
-depth,
-and recruiter-focused presentation.
+This site — glassmorphism UI, Three.js background, and recruiter-focused layout built as a single-page portfolio and resume.
 </p>
 
-</div>
-
-<div class="panel">
-
-<h3>
-Future Cloud Projects
-</h3>
-
-<p>
-Future AWS,
-Azure,
-Python automation,
-AI infrastructure,
-and cloud engineering projects will continue expanding this portfolio.
+<p style="margin-top:14px;">
+<a href="https://github.com/mikejschartner/Mike-Schartner-Portfolio" target="_blank" rel="noopener">
+View on GitHub
+</a>
 </p>
 
 </div>
