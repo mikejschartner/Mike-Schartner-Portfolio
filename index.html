@@ -539,7 +539,7 @@ margin-bottom:8px;
 
 }
 
-.panel a{
+.panel a:not(.btn){
 
 color:#ffffff;
 
@@ -549,7 +549,7 @@ text-underline-offset:3px;
 
 }
 
-.panel a:hover{
+.panel a:not(.btn):hover{
 
 opacity:.85;
 
@@ -561,21 +561,23 @@ text-decoration:none;
 
 }
 
-.panel a.btn-primary{
+.project-links a.btn-primary{
 
-background:white;
+background:rgba(168,85,247,.18);
 
-color:black;
+border:1px solid rgba(168,85,247,.45);
+
+color:#f3e8ff;
 
 }
 
-.panel a.btn-secondary{
+.project-links a.btn-secondary{
 
 background:rgba(255,255,255,.05);
 
-border:1px solid rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
 
-color:white;
+color:#ffffff;
 
 }
 
