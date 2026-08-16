@@ -1249,7 +1249,7 @@ AI & Cloud Passion
 </h3>
 
 <p>
-Built and shipped <strong>WMMods</strong>, a dual-platform automation suite (Windows + Android) using OCR pipelines, rule-based decision logic, and GitHub Actions release automation with in-app updaters.
+Built and shipped <strong>WMMods</strong>, a dual-platform automation suite (Windows + Android), and <strong>WMNavigation</strong>, a live Tarkov raid companion with screenshot localization, movement prediction, hover loot pricing, and GitHub Actions release automation.
 </p>
 
 </div>
@@ -1573,6 +1573,167 @@ Repo names stay fixed so friends' auto-update configs keep working across releas
 
 <p style="margin-top:14px;">
 <strong>Why this project matters for my portfolio.</strong> It combines automation engineering, computer vision, cross-platform product design, and cloud-style release pipelines — the same skills I talk about in cloud and intelligent systems work, backed by repos and shipped artifacts instead of placeholder text.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+<div class="panel featured-project">
+
+<div class="featured-inner">
+
+<div class="featured-header">
+
+<div>
+
+<div class="featured-badge">Featured Side Project</div>
+
+<h3>
+WMNavigation
+</h3>
+
+<p class="featured-subtitle">
+Windows Tarkov raid companion I designed, shipped, and keep live — a click-through overlay that tracks you on the map between screenshots, prices hovered items from the in-game name tooltip, and routes quests and loot, with GitHub Actions CI/CD and an in-app updater.
+</p>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://github.com/mikejschartner/WMNavigation" target="_blank" rel="noopener" class="btn btn-primary">
+GitHub Repo
+</a>
+
+<a href="https://github.com/mikejschartner/WMNavigation/releases" target="_blank" rel="noopener" class="btn btn-secondary">
+Releases
+</a>
+
+</div>
+
+</div>
+
+<div class="project-media">
+
+<div class="media-frame">
+
+<div class="media-placeholder">
+Live overlay: map marker, FPS compass, loot-value HUD, and audio direction sit on top of Tarkov without stealing focus. One tagged release builds <strong>WMNavigation.exe</strong> and <strong>latest.json</strong> for auto-update.
+</div>
+
+</div>
+
+<div class="media-frame">
+
+<div class="media-placeholder">
+CI/CD pipeline: push tag <strong>v0.6.x</strong> → smoke test the Qt app → PyInstaller on windows-latest → GitHub Release. Clients poll Releases and replace the exe.
+</div>
+
+</div>
+
+</div>
+
+<div class="project-tags">
+
+<div class="project-tag">Python</div>
+<div class="project-tag">PySide6</div>
+<div class="project-tag">OpenCV</div>
+<div class="project-tag">Windows OCR</div>
+<div class="project-tag">GitHub Actions</div>
+<div class="project-tag">PyInstaller</div>
+<div class="project-tag">Computer Vision</div>
+<div class="project-tag">CI/CD</div>
+
+</div>
+
+<div class="architecture-grid">
+
+<div class="arch-card">
+
+<h4>What it does</h4>
+
+<p>
+Localizes the player from in-raid screenshots, keeps the map marker walking between pings from movement keys, shows gunshot direction from game audio, and prices stash/raid items by reading Tarkov’s hover name box then looking up flea and trader value.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Name-tooltip pipeline</h4>
+
+<p>
+Crops a tight region above and to the right of the cursor — the same place Tarkov always draws the black name chip. Finds the gray-bordered box, OCRs the single white line, and matches it against the item catalog instead of guessing from the icon picture.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Live tracking</h4>
+
+<p>
+Screenshot localization is ground truth. Between V pings, WASD/sprint dead-reckoning slides the marker, optical flow updates look when capture works, and a compass HUD stays aligned to the current map north.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Release automation</h4>
+
+<p>
+Every user-facing change is smoke-tested, tagged, and published by GitHub Actions. The packaged exe checks <strong>latest.json</strong> on GitHub Releases and updates in place — same release pattern as WMMods, different product.
+</p>
+
+</div>
+
+</div>
+
+<details class="project-details">
+
+<summary>Read the full technical breakdown</summary>
+
+<p>
+<strong>Product architecture.</strong> WMNavigation is a Python / PySide6 desktop overlay. It never injects into Tarkov. Capture is in-memory BitBlt of the game window, input is global hotkeys plus async key state, and HUDs are click-through layered windows so Tarkov stays focused.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Computer vision workflow.</strong> A V screenshot is localized on the current map. Hover loot value waits for the stash name tooltip, OCRs it with Windows.Media.Ocr, and resolves price from the existing item catalog. Cached item icons remain a fallback if the name chip is not up yet.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Prediction and audio.</strong> With AI Prediction on, walk/sprint/strafe keys integrate along facing so the marker does not freeze between pings. A separate WASAPI loopback listener classifies gunshots and plots direction on the compass without rerouting game audio.
+</p>
+
+<div class="pipeline-steps">
+
+<div class="pipeline-step">
+<strong>1. Smoke first</strong>
+<code>python scripts/smoke_test.py</code> must print SMOKE OK before a version is tagged — the same gate GitHub Actions runs.
+</div>
+
+<div class="pipeline-step">
+<strong>2. CD on tag</strong>
+Tag <strong>v0.6.x</strong> builds WMNavigation.exe on windows-latest and attaches it to a GitHub Release with latest.json.
+</div>
+
+<div class="pipeline-step">
+<strong>3. In-app update</strong>
+Installed copies poll Releases, compare versions, download the new exe, and relaunch.
+</div>
+
+<div class="pipeline-step">
+<strong>4. Stable repo</strong>
+<code>mikejschartner/WMNavigation</code> stays the public source and download channel.
+</div>
+
+</div>
+
+<p style="margin-top:14px;">
+<strong>Why this project matters for my portfolio.</strong> It is a shipped Windows product with computer vision, overlay UX, and the same CI/CD discipline as WMMods — localization, OCR, real-time prediction, and automated releases instead of a demo script.
 </p>
 
 </details>
