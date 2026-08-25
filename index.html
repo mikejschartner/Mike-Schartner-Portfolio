@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -643,6 +643,16 @@ margin-bottom:14px;
 
 }
 
+.featured-badge.lead-badge{
+
+background:rgba(158,203,255,.12);
+
+border:1px solid rgba(158,203,255,.4);
+
+color:#9ecbff;
+
+}
+
 .featured-subtitle{
 
 font-size:17px;
@@ -1249,7 +1259,7 @@ AI & Cloud Passion
 </h3>
 
 <p>
-Built and shipped <strong>WMMods</strong>, a dual-platform automation suite (Windows + Android), and <strong>WMNavigation</strong>, a live Tarkov raid companion with screenshot localization, movement prediction, hover loot pricing, and GitHub Actions release automation.
+Lead project is <strong>Elite NFL Intelligence</strong>, a multi-source NFL analytics platform with live data pipelines, injury intelligence, and play-by-play modeling. Also shipped <strong>WMMods</strong>, a dual-platform automation suite (Windows + Android), and <strong>WMNavigation</strong>, a live Tarkov raid companion with screenshot localization, movement prediction, hover loot pricing, and GitHub Actions release automation.
 </p>
 
 </div>
@@ -1420,6 +1430,168 @@ Projects & Portfolio
 </h2>
 
 <div class="panel-grid">
+
+<div class="panel featured-project">
+
+<div class="featured-inner">
+
+<div class="featured-header">
+
+<div>
+
+<div class="featured-badge lead-badge">Lead Project</div>
+
+<h3>
+Elite NFL Intelligence
+</h3>
+
+<p class="featured-subtitle">
+Multi-source NFL sports-intelligence platform I designed as a full-stack engineering system — live data pipelines, source fusion, injury tracking, weather context, play-by-play analytics, activation licensing, and a simulated $5 friends-leaderboard architecture. Presented as AI / ML data engineering, not a gambling product. Simulated money only; the platform does not place real wagers.
+</p>
+
+</div>
+
+<div class="project-links">
+
+<a href="https://github.com/mikejschartner/elite-nfl-intelligence-showcase" target="_blank" rel="noopener" class="btn btn-primary">
+GitHub Showcase
+</a>
+
+<a href="https://github.com/mikejschartner/elite-nfl-intelligence-showcase#live-data-pipeline" target="_blank" rel="noopener" class="btn btn-secondary">
+Architecture
+</a>
+
+</div>
+
+</div>
+
+<div class="project-media">
+
+<div class="media-frame">
+
+<div class="media-placeholder">
+Live weekly board, injury center, and weather context sit on top of a normalized internal database. Independent free sources (ESPN, NWS, nflverse) are adapted, timestamped, and marked STALE when they go quiet — they are not silently treated as live.
+</div>
+
+</div>
+
+<div class="media-frame">
+
+<div class="media-placeholder">
+Public GitHub repo is a safe architecture showcase. Proprietary prediction weights, API keys, license exports, and private user data stay out of Git.
+</div>
+
+</div>
+
+</div>
+
+<div class="project-tags">
+
+<div class="project-tag">Python</div>
+<div class="project-tag">FastAPI</div>
+<div class="project-tag">React</div>
+<div class="project-tag">TypeScript</div>
+<div class="project-tag">SQLAlchemy</div>
+<div class="project-tag">Source fusion</div>
+<div class="project-tag">Play-by-play analytics</div>
+<div class="project-tag">Licensing</div>
+<div class="project-tag">Simulated bankroll</div>
+
+</div>
+
+<div class="architecture-grid">
+
+<div class="arch-card">
+
+<h4>What it does</h4>
+
+<p>
+Pulls independent NFL feeds into one internal model of games, players, injuries, and weather, then serves an activation-gated React client: weekly board, injury intelligence, settings, and simulated friends-leaderboard surfaces.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Data pipeline</h4>
+
+<p>
+Provider adapters normalize ESPN, NWS, and nflverse records with freshness and confidence metadata. Interval polling caches live feeds faster than historical backfills. Conflicts keep provider provenance instead of being overwritten.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Modeling foundation</h4>
+
+<p>
+Play-by-play for the most recent three NFL seasons drives team and player metrics (EPA, success-rate windows, opponent-adjusted rankings). Features respect a cutoff timestamp so future games cannot leak into training.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Security model</h4>
+
+<p>
+Username plus activation key; the backend redeems hashed keys and issues a signed session. STANDARD licenses expire on server time. Secrets stay off the frontend. Simulated money only — no real wagering.
+</p>
+
+</div>
+
+</div>
+
+<details class="project-details">
+
+<summary>Read the full technical breakdown</summary>
+
+<p>
+<strong>Platform architecture.</strong> FastAPI + SQLAlchemy on the server, React / TypeScript / Vite on the client. SQLite in development, PostgreSQL-ready for production. Replaceable provider interfaces cover sports data, odds, injury, weather, historical PBP, and news so one source can be swapped without rewriting the boards.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Fusion and injury intelligence.</strong> Name variants resolve to one internal player/team/game ID. Injury status transitions (for example QUESTIONABLE to OUT) are recorded as events for later recalculation. Outdoor venues get NWS weather; indoor games are skipped.
+</p>
+
+<p style="margin-top:14px;">
+<strong>What stays private.</strong> The production prediction engine is server-side. This public repo is documentation for hiring review. Model weights, owner keys, and user history are not published.
+</p>
+
+<div class="pipeline-steps">
+
+<div class="pipeline-step">
+<strong>1. Ingest</strong>
+Free providers land in adapters with timestamps, freshness, and canonical IDs.
+</div>
+
+<div class="pipeline-step">
+<strong>2. Normalize</strong>
+Source records write into a shared database instead of each board scraping a different API.
+</div>
+
+<div class="pipeline-step">
+<strong>3. Feature</strong>
+Recent-season PBP becomes team/player metrics with an explicit no-future-leakage cutoff.
+</div>
+
+<div class="pipeline-step">
+<strong>4. Serve</strong>
+Activation-gated JSON APIs feed the weekly board, injury center, and simulated leaderboard.
+</div>
+
+</div>
+
+<p style="margin-top:14px;">
+<strong>Why this project matters for my portfolio.</strong> It is the largest systems piece I have built: real-time ingest, multi-source fusion, historical analytics, licensing, and a product UI — the same cloud and intelligent-systems work I talk about, backed by a public architecture write-up instead of a screenshot-only demo.
+</p>
+
+</details>
+
+</div>
+
+</div>
 
 <div class="panel featured-project">
 
