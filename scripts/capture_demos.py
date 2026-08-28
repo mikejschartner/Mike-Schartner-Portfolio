@@ -169,6 +169,10 @@ async def capture_nfl() -> list[Path]:
         await page.add_style_tag(
             content="""
             .brand-mark { display: none !important; }
+            .app-header {
+              background-image: none !important;
+              background-color: #0c0c0c !important;
+            }
             .activation-gate { background-image: none !important; }
             """
         )
@@ -182,7 +186,7 @@ async def capture_nfl() -> list[Path]:
                 await page.wait_for_timeout(2200)
                 raw = TMP / f"nfl-{label}-raw.png"
                 cropped = TMP / f"nfl-{label}.png"
-                await page.locator(".app-shell").screenshot(path=str(raw))
+                await page.screenshot(path=str(raw), full_page=False)
                 crop_portfolio_frame(raw, cropped)
                 frames.append(cropped)
                 print(f"Captured NFL {label} -> {cropped}")
@@ -194,24 +198,14 @@ async def capture_nfl() -> list[Path]:
 
 
 def build_wmnavigation_gif() -> None:
-    """Use real WMNavigation project imagery (splash + map concept)."""
-    src_splash = Path(r"C:\Users\mikej\OneDrive\Desktop\WMNavigation\assets\splash.png")
-    src_map = Path(r"C:\Users\mikej\OneDrive\Desktop\WMNavigation_satellite_map_concept.png")
-    src_banner = Path(r"C:\Users\mikej\OneDrive\Desktop\WMNavigation\assets\brand_banner.png")
+    """Build WMNavigation demo GIF from real in-app UI screenshots."""
     frames: list[Path] = []
-    for src in (src_splash, src_map, src_banner):
+    for i in range(1, 6):
+        src = ASSETS / f"wmnav-{i}.png"
         if src.exists():
-            out = TMP / f"wmnav-{src.stem}.png"
-            img = Image.open(src).convert("RGB")
-            img.thumbnail((1280, 720), Image.Resampling.LANCZOS)
-            canvas = Image.new("RGB", (1280, 720), (10, 10, 10))
-            ox = (1280 - img.width) // 2
-            oy = (720 - img.height) // 2
-            canvas.paste(img, (ox, oy))
-            canvas.save(out)
-            frames.append(out)
+            frames.append(src)
     if not frames:
-        raise FileNotFoundError("No WMNavigation source images found")
+        raise FileNotFoundError("No WMNavigation screenshots found (assets/wmnav-1.png … wmnav-5.png)")
     pngs_to_gif(frames, ASSETS / "wmnavigation-demo.gif", duration_ms=1200)
 
 

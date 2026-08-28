@@ -15,14 +15,19 @@ FILES = [
     "assets/wmgoldmine-demo.gif",
     "assets/wmmods-demo.gif",
     "assets/wmnavigation-demo.gif",
+    "assets/wmnav-1.png",
+    "assets/wmnav-2.png",
+    "assets/wmnav-3.png",
+    "assets/wmnav-4.png",
+    "assets/wmnav-5.png",
     "assets/profile.jpg",
     "scripts/capture_demos.py",
     "scripts/git_commit_push.py",
 ]
 
-MESSAGE = """Add WMGOLDMINE and real UI demo GIFs for all featured projects.
+MESSAGE = """Refresh WMNavigation demo with real in-app UI screenshots.
 
-Sync Elite NFL, WMGOLDMINE, WMMods, and WMNavigation with matched screenshots captured from live apps and project assets."""
+Rebuild wmnavigation-demo.gif from five live WMNavigation captures, add a screenshot gallery to the featured project block, and update capture_demos.py to reuse the assets."""
 
 
 def main() -> None:
