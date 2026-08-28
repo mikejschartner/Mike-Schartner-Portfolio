@@ -1259,7 +1259,7 @@ AI & Cloud Passion
 </h3>
 
 <p>
-Lead project is <strong>Elite NFL Intelligence</strong>, a multi-source NFL analytics platform with live data pipelines, injury intelligence, and play-by-play modeling. Also shipped <strong>WMGOLDMINE</strong>, a gold-trading research lab with FastAPI, React, Alpaca live quotes, and independent paper Challenge Mode accounts. Automation work includes <strong>WMMods</strong> (Windows + Android OCR bots) and <strong>WMNavigation</strong>, a live Tarkov raid companion with screenshot localization, movement prediction, hover loot pricing, and GitHub Actions release automation.
+Lead project is <strong>WMCloudX</strong>, a portfolio-grade CloudOps control center with Local Lab mode, Incident Lab simulations, Prometheus/Grafana observability, and CI/CD security scanning (Trivy, Gitleaks, Checkov). Also built <strong>Elite NFL Intelligence</strong>, a multi-source NFL analytics platform with live data pipelines and play-by-play modeling. Shipped <strong>WMGOLDMINE</strong> (gold-trading research lab), <strong>WMMods</strong> (Windows + Android OCR automation), and <strong>WMNavigation</strong> (Tarkov raid companion with CV and GitHub Actions releases).
 </p>
 
 </div>
@@ -1440,6 +1440,167 @@ Projects & Portfolio
 <div>
 
 <div class="featured-badge lead-badge">Lead Project</div>
+
+<h3>
+WMCloudX
+</h3>
+
+<p class="featured-subtitle">
+CloudOps / DevOps / SRE control center I designed and built as a modular monolith — a dark operations UI over real telemetry, incident simulation, alerts, deployment tracking, and security scan integration. Runs fully in <strong>Local Lab</strong> mode without AWS; optional EC2 inventory and CloudWatch when credentials are configured. Built to demonstrate operational engineering skills to employers, not as marketing fluff.
+</p>
+
+</div>
+
+<div class="project-links">
+
+<a href="file:///C:/Users/mikej/OneDrive/Desktop/WMCloudX/CloudOps-Control-Center-Framework/README.md" class="btn btn-primary">
+Local README
+</a>
+
+<a href="file:///C:/Users/mikej/OneDrive/Desktop/WMCloudX/CloudOps-Control-Center-Framework/docs/architecture.md" class="btn btn-secondary">
+Architecture
+</a>
+
+</div>
+
+</div>
+
+<div class="project-media">
+
+<div class="media-frame">
+
+<img src="assets/wmcloudx-demo.gif?v=20250828" alt="WMCloudX operations dashboard, services health, Incident Lab, Security Center, and observability demo">
+
+</div>
+
+<div class="media-frame">
+
+<div class="media-placeholder">
+Local repository (no public GitHub remote configured): <strong>WMCloudX/CloudOps-Control-Center-Framework</strong>. Full stack via Desktop launcher or Docker Compose — Postgres, Prometheus, Grafana, Loki, and k6 load tests.
+</div>
+
+</div>
+
+</div>
+
+<div class="project-tags">
+
+<div class="project-tag">React</div>
+<div class="project-tag">TypeScript</div>
+<div class="project-tag">FastAPI</div>
+<div class="project-tag">PostgreSQL</div>
+<div class="project-tag">Docker</div>
+<div class="project-tag">Prometheus</div>
+<div class="project-tag">Grafana</div>
+<div class="project-tag">k6</div>
+<div class="project-tag">GitHub Actions</div>
+<div class="project-tag">Terraform</div>
+
+</div>
+
+<div class="architecture-grid">
+
+<div class="arch-card">
+
+<h4>What it does</h4>
+
+<p>
+Single-pane operations center: CPU/memory/request metrics, service health, internal alerts, deployment history, live log viewer with secret redaction, and optional AWS EC2/CloudWatch when configured.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Local Lab</h4>
+
+<p>
+Default mode runs without AWS using Docker Compose (Postgres, test service, Prometheus, Grafana, Loki). Standalone fallback uses SQLite when Docker is unavailable — Incident Lab and Security Center still work.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Incident Lab</h4>
+
+<p>
+Controlled scenarios (traffic surge, service failure, CPU spike, DB latency, bad deployment) produce real effects inside the local stack — real HTTP load and simulated failures, persisted timelines and MTTR.
+</p>
+
+</div>
+
+<div class="arch-card">
+
+<h4>Security & CI/CD</h4>
+
+<p>
+GitHub Actions runs lint, test, k6 smoke, Gitleaks, Trivy, and Checkov. Security Center reads actual scan artifacts — shows "Not Scanned" when empty, never fabricated counts.
+</p>
+
+</div>
+
+</div>
+
+<details class="project-details">
+
+<summary>Read the full technical breakdown</summary>
+
+<p>
+<strong>Platform architecture.</strong> React / TypeScript / Vite frontend with dark ops UI. Python 3.12 FastAPI backend with Alembic migrations. PostgreSQL in full lab mode; SQLite in standalone. Provider layer isolates AWS logic under <code>wmcloudx_api/providers/</code> so Local Lab and future AWS expansion stay separated.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Observability stack.</strong> Prometheus scrapes API and test-service metrics. Grafana ships with a provisioned WMCloudX Overview dashboard and Loki datasource. k6 load tests (light/medium/heavy presets) with httpx fallback when k6 is not on PATH.
+</p>
+
+<p style="margin-top:14px;">
+<strong>Engineering discipline.</strong> Typed configuration, structured errors, secret redaction in logs, tests that never contact production AWS, and Terraform local IaC scanned by Checkov. Desktop launcher shortcut for one-click demos.
+</p>
+
+<div class="pipeline-steps">
+
+<div class="pipeline-step">
+<strong>1. Observe</strong>
+Prometheus + Grafana collect API, service, and host metrics with provisioned dashboards.
+</div>
+
+<div class="pipeline-step">
+<strong>2. Simulate</strong>
+Incident Lab triggers real local effects — HTTP load, failure injection, persisted incident history.
+</div>
+
+<div class="pipeline-step">
+<strong>3. Scan</strong>
+Trivy, Gitleaks, and Checkov produce artifacts consumed by Security Center — honest empty states.
+</div>
+
+<div class="pipeline-step">
+<strong>4. Ship</strong>
+GitHub Actions CI: lint, typecheck, pytest, Vitest, k6 smoke, and non-blocking security scans.
+</div>
+
+</div>
+
+<p style="margin-top:14px;">
+<strong>Why this project matters for my portfolio.</strong> It is the clearest expression of CloudOps / SRE work: real telemetry, incident response practice, observability tooling, security scan integration, and CI/CD — runnable locally for live demos without inventing metrics or deployment URLs.
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+<div class="panel featured-project">
+
+<div class="featured-inner">
+
+<div class="featured-header">
+
+<div>
+
+<div class="featured-badge">Featured Side Project</div>
 
 <h3>
 Elite NFL Intelligence

@@ -15,6 +15,8 @@ FILES = [
     "assets/wmgoldmine-demo.gif",
     "assets/wmmods-demo.gif",
     "assets/wmnavigation-demo.gif",
+    "assets/wmcloudx-demo.gif",
+    "assets/wmcloudx-hero-4k.png",
     "assets/wmnav-1.png",
     "assets/wmnav-2.png",
     "assets/wmnav-3.png",
@@ -25,7 +27,10 @@ FILES = [
     "scripts/git_commit_push.py",
 ]
 
-MESSAGE = """Remove WMNavigation bottom screenshot gallery; main GIF already shows all frames."""
+MESSAGE = """Feature WMCloudX as lead project with animated demo GIF.
+
+Add WMCloudX CloudOps control center as the portfolio lead project with
+multi-frame demo GIF, 4K hero asset, architecture breakdown, and tech stack."""
 
 
 def main() -> None:
