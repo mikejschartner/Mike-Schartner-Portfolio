@@ -25,9 +25,7 @@ FILES = [
     "scripts/git_commit_push.py",
 ]
 
-MESSAGE = """Refresh NFL demo GIF cache bust and multi-frame live UI capture.
-
-Cycle Weekly Board, Injuries, Game Lab, Player Props, and Leaderboard with professional crops that hide Whiskey Mike's chair branding."""
+MESSAGE = """Remove WMNavigation bottom screenshot gallery; main GIF already shows all frames."""
 
 
 def main() -> None:
