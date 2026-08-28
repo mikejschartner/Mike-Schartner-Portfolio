@@ -25,9 +25,9 @@ FILES = [
     "scripts/git_commit_push.py",
 ]
 
-MESSAGE = """Refresh WMNavigation demo with real in-app UI screenshots.
+MESSAGE = """Replace NFL demo GIF with multi-frame live UI capture.
 
-Rebuild wmnavigation-demo.gif from five live WMNavigation captures, add a screenshot gallery to the featured project block, and update capture_demos.py to reuse the assets."""
+Cycle Weekly Board, Injuries, Game Lab, Player Props, and Leaderboard with professional crops that hide Whiskey Mike's chair branding."""
 
 
 def main() -> None:
