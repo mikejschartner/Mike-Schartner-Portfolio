@@ -27,10 +27,10 @@ FILES = [
     "scripts/git_commit_push.py",
 ]
 
-MESSAGE = """Feature WMCloudX as lead project with animated demo GIF.
+MESSAGE = """Formalize WMCloudX portfolio copy with professional engineering tone.
 
-Add WMCloudX CloudOps control center as the portfolio lead project with
-multi-frame demo GIF, 4K hero asset, architecture breakdown, and tech stack."""
+Rewrite WMCloudX descriptions to remove marketing language and focus on
+CloudOps architecture, observability, incident response, and CI/CD scope."""
 
 
 def main() -> None:

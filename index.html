@@ -1259,7 +1259,7 @@ AI & Cloud Passion
 </h3>
 
 <p>
-Lead project is <strong>WMCloudX</strong>, a portfolio-grade CloudOps control center with Local Lab mode, Incident Lab simulations, Prometheus/Grafana observability, and CI/CD security scanning (Trivy, Gitleaks, Checkov). Also built <strong>Elite NFL Intelligence</strong>, a multi-source NFL analytics platform with live data pipelines and play-by-play modeling. Shipped <strong>WMGOLDMINE</strong> (gold-trading research lab), <strong>WMMods</strong> (Windows + Android OCR automation), and <strong>WMNavigation</strong> (Tarkov raid companion with CV and GitHub Actions releases).
+Lead project is <strong>WMCloudX</strong>, a CloudOps control center built as a modular monolith with Local Lab deployment, Incident Lab scenarios, Prometheus/Grafana observability, and CI/CD security scanning (Trivy, Gitleaks, Checkov). Also built <strong>Elite NFL Intelligence</strong>, a multi-source NFL analytics platform with live data pipelines and play-by-play modeling. Shipped <strong>WMGOLDMINE</strong> (gold-trading research lab), <strong>WMMods</strong> (Windows + Android OCR automation), and <strong>WMNavigation</strong> (Tarkov raid companion with CV and GitHub Actions releases).
 </p>
 
 </div>
@@ -1446,7 +1446,7 @@ WMCloudX
 </h3>
 
 <p class="featured-subtitle">
-CloudOps / DevOps / SRE control center I designed and built as a modular monolith — a dark operations UI over real telemetry, incident simulation, alerts, deployment tracking, and security scan integration. Runs fully in <strong>Local Lab</strong> mode without AWS; optional EC2 inventory and CloudWatch when credentials are configured. Built to demonstrate operational engineering skills to employers, not as marketing fluff.
+CloudOps control center I built as a modular monolith — operations UI for telemetry, incident simulation, alerting, deployment tracking, and security scan results. Runs in <strong>Local Lab</strong> mode without AWS; EC2 inventory and CloudWatch integrate when credentials are configured.
 </p>
 
 </div>
@@ -1476,7 +1476,7 @@ Architecture
 <div class="media-frame">
 
 <div class="media-placeholder">
-Local repository (no public GitHub remote configured): <strong>WMCloudX/CloudOps-Control-Center-Framework</strong>. Full stack via Desktop launcher or Docker Compose — Postgres, Prometheus, Grafana, Loki, and k6 load tests.
+Repository: <strong>WMCloudX/CloudOps-Control-Center-Framework</strong>. Full stack via Desktop launcher or Docker Compose — PostgreSQL, Prometheus, Grafana, Loki, and k6 load tests.
 </div>
 
 </div>
@@ -1505,7 +1505,7 @@ Local repository (no public GitHub remote configured): <strong>WMCloudX/CloudOps
 <h4>What it does</h4>
 
 <p>
-Single-pane operations center: CPU/memory/request metrics, service health, internal alerts, deployment history, live log viewer with secret redaction, and optional AWS EC2/CloudWatch when configured.
+Unified operations dashboard: CPU/memory/request metrics, service health, alerts, deployment history, log viewer with secret redaction, and optional EC2/CloudWatch integration.
 </p>
 
 </div>
@@ -1515,7 +1515,7 @@ Single-pane operations center: CPU/memory/request metrics, service health, inter
 <h4>Local Lab</h4>
 
 <p>
-Default mode runs without AWS using Docker Compose (Postgres, test service, Prometheus, Grafana, Loki). Standalone fallback uses SQLite when Docker is unavailable — Incident Lab and Security Center still work.
+Default deployment uses Docker Compose (PostgreSQL, test service, Prometheus, Grafana, Loki). Standalone mode falls back to SQLite when Docker is unavailable; Incident Lab and Security Center remain operational.
 </p>
 
 </div>
@@ -1525,7 +1525,7 @@ Default mode runs without AWS using Docker Compose (Postgres, test service, Prom
 <h4>Incident Lab</h4>
 
 <p>
-Controlled scenarios (traffic surge, service failure, CPU spike, DB latency, bad deployment) produce real effects inside the local stack — real HTTP load and simulated failures, persisted timelines and MTTR.
+Controlled scenarios (traffic surge, service failure, CPU spike, DB latency, bad deployment) inject measurable effects into the local stack — HTTP load, failure injection, persisted timelines and MTTR.
 </p>
 
 </div>
@@ -1535,7 +1535,7 @@ Controlled scenarios (traffic surge, service failure, CPU spike, DB latency, bad
 <h4>Security & CI/CD</h4>
 
 <p>
-GitHub Actions runs lint, test, k6 smoke, Gitleaks, Trivy, and Checkov. Security Center reads actual scan artifacts — shows "Not Scanned" when empty, never fabricated counts.
+GitHub Actions pipeline: lint, test, k6 smoke, Gitleaks, Trivy, and Checkov. Security Center surfaces CI scan artifacts; empty states indicate scans not yet run.
 </p>
 
 </div>
@@ -1555,7 +1555,7 @@ GitHub Actions runs lint, test, k6 smoke, Gitleaks, Trivy, and Checkov. Security
 </p>
 
 <p style="margin-top:14px;">
-<strong>Engineering discipline.</strong> Typed configuration, structured errors, secret redaction in logs, tests that never contact production AWS, and Terraform local IaC scanned by Checkov. Desktop launcher shortcut for one-click demos.
+<strong>Engineering discipline.</strong> Typed configuration, structured errors, secret redaction in logs, unit tests with mocked AWS, and Terraform local IaC validated by Checkov.
 </p>
 
 <div class="pipeline-steps">
@@ -1567,12 +1567,12 @@ Prometheus + Grafana collect API, service, and host metrics with provisioned das
 
 <div class="pipeline-step">
 <strong>2. Simulate</strong>
-Incident Lab triggers real local effects — HTTP load, failure injection, persisted incident history.
+Incident Lab injects controlled failures — HTTP load, service degradation, persisted incident history.
 </div>
 
 <div class="pipeline-step">
 <strong>3. Scan</strong>
-Trivy, Gitleaks, and Checkov produce artifacts consumed by Security Center — honest empty states.
+Trivy, Gitleaks, and Checkov generate artifacts consumed by Security Center.
 </div>
 
 <div class="pipeline-step">
@@ -1583,7 +1583,7 @@ GitHub Actions CI: lint, typecheck, pytest, Vitest, k6 smoke, and non-blocking s
 </div>
 
 <p style="margin-top:14px;">
-<strong>Why this project matters for my portfolio.</strong> It is the clearest expression of CloudOps / SRE work: real telemetry, incident response practice, observability tooling, security scan integration, and CI/CD — runnable locally for live demos without inventing metrics or deployment URLs.
+<strong>Summary.</strong> Covers CloudOps and SRE scope: telemetry ingestion, incident response workflows, observability tooling, security scan integration, and CI/CD — deployable locally with real metrics and scan artifacts.
 </p>
 
 </details>
