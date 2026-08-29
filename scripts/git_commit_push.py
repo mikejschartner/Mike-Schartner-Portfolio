@@ -27,10 +27,10 @@ FILES = [
     "scripts/git_commit_push.py",
 ]
 
-MESSAGE = """Formalize WMCloudX portfolio copy with professional engineering tone.
+MESSAGE = """Mobile-first responsive layout for portfolio on phones and tablets.
 
-Rewrite WMCloudX descriptions to remove marketing language and focus on
-CloudOps architecture, observability, incident response, and CI/CD scope."""
+Improve typography, project cards, media frames, touch targets, single-column
+grids, and disable Three.js background on small screens to reduce jank."""
 
 
 def main() -> None:

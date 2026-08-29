@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Michael Schartner | Cloud & AI Engineer</title>
 
@@ -17,6 +17,13 @@
 
 html{
 scroll-behavior:smooth;
+-webkit-text-size-adjust:100%;
+text-size-adjust:100%;
+}
+
+img{
+max-width:100%;
+height:auto;
 }
 
 *{
@@ -438,7 +445,7 @@ margin-bottom:60px;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));
 
 gap:30px;
 
@@ -1013,13 +1020,15 @@ transform:translateY(0);
 
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media(max-width:1150px){
 
 .hero-container{
 
 grid-template-columns:1fr;
+
+gap:50px;
 
 }
 
@@ -1031,17 +1040,31 @@ font-size:58px;
 
 }
 
-@media(max-width:800px){
+@media(max-width:768px){
+
+body{
+
+font-size:16px;
+
+line-height:1.6;
+
+}
 
 nav{
 
-flex-direction:column;
+padding:16px 20px;
 
-gap:20px;
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:12px;
 
 }
 
 nav ul{
+
+gap:8px 14px;
 
 flex-wrap:wrap;
 
@@ -1049,15 +1072,148 @@ justify-content:center;
 
 }
 
+nav a{
+
+font-size:16px;
+
+padding:10px 12px;
+
+min-height:44px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+.hero{
+
+padding:120px 20px 60px;
+
+min-height:auto;
+
+}
+
+section{
+
+padding:70px 20px;
+
+}
+
+.hero-container{
+
+gap:40px;
+
+}
+
 .hero-left h1{
 
-font-size:44px;
+font-size:clamp(36px,10vw,48px);
+
+line-height:1.15;
+
+}
+
+.hero-left p{
+
+font-size:17px;
+
+line-height:1.6;
+
+}
+
+.tag{
+
+font-size:14px;
+
+padding:10px 16px;
+
+letter-spacing:.5px;
+
+}
+
+.tech{
+
+font-size:14px;
+
+padding:10px 14px;
 
 }
 
 .section-title{
 
-font-size:38px;
+font-size:clamp(28px,7vw,38px);
+
+margin-bottom:36px;
+
+line-height:1.2;
+
+}
+
+.panel-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.panel{
+
+padding:24px 20px;
+
+border-radius:22px;
+
+}
+
+.panel h3{
+
+font-size:22px;
+
+}
+
+.panel p,
+.panel li{
+
+font-size:16px;
+
+line-height:1.6;
+
+}
+
+.featured-inner{
+
+padding:24px 20px;
+
+}
+
+.featured-header{
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.featured-badge{
+
+font-size:13px;
+
+}
+
+.featured-subtitle{
+
+font-size:16px;
+
+line-height:1.6;
 
 }
 
@@ -1065,11 +1221,272 @@ font-size:38px;
 
 grid-template-columns:1fr;
 
+gap:16px;
+
 }
 
-.featured-header{
+.media-frame{
+
+min-height:unset;
+
+aspect-ratio:16/9;
+
+max-height:320px;
+
+}
+
+.media-frame img{
+
+min-height:unset;
+
+height:auto;
+
+max-height:320px;
+
+object-fit:contain;
+
+background:rgba(0,0,0,.45);
+
+}
+
+.media-placeholder{
+
+min-height:unset;
+
+padding:20px;
+
+font-size:15px;
+
+line-height:1.6;
+
+aspect-ratio:16/9;
+
+max-height:320px;
+
+}
+
+.architecture-grid{
+
+grid-template-columns:1fr;
+
+gap:14px;
+
+}
+
+.arch-card h4{
+
+font-size:17px;
+
+}
+
+.arch-card p{
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+.project-tag{
+
+font-size:13px;
+
+padding:8px 14px;
+
+}
+
+.project-links{
+
+width:100%;
+
+}
+
+.project-links .btn{
+
+font-size:15px;
+
+padding:14px 20px;
+
+min-height:44px;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.btn{
+
+padding:14px 24px;
+
+min-height:44px;
+
+font-size:16px;
+
+}
+
+.profile-card{
+
+padding:24px 20px;
+
+max-width:100%;
+
+}
+
+.profile-card h2{
+
+font-size:24px;
+
+}
+
+.timeline-item{
+
+padding:22px 20px;
+
+}
+
+.timeline-item h4{
+
+font-size:20px;
+
+}
+
+.pipeline-steps{
+
+grid-template-columns:1fr;
+
+gap:12px;
+
+}
+
+.pipeline-step{
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+details.project-details summary{
+
+font-size:16px;
+
+padding:8px 0;
+
+min-height:44px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+footer{
+
+padding:32px 20px;
+
+font-size:14px;
+
+}
+
+.timeline-item:hover,
+.panel:hover{
+
+transform:none;
+
+}
+
+#bg{
+
+opacity:.3;
+
+}
+
+}
+
+@media(max-width:480px){
+
+nav{
+
+padding:14px 16px;
+
+}
+
+.hero{
+
+padding:110px 16px 50px;
+
+}
+
+section{
+
+padding:56px 16px;
+
+}
+
+.hero-left h1{
+
+font-size:34px;
+
+}
+
+.section-title{
+
+font-size:26px;
+
+margin-bottom:28px;
+
+}
+
+.button-group{
 
 flex-direction:column;
+
+width:100%;
+
+}
+
+.button-group .btn{
+
+width:100%;
+
+text-align:center;
+
+justify-content:center;
+
+}
+
+.project-links{
+
+flex-direction:column;
+
+}
+
+.project-links .btn{
+
+width:100%;
+
+}
+
+.media-frame,
+.media-frame img,
+.media-placeholder{
+
+max-height:260px;
+
+}
+
+.featured-inner{
+
+padding:20px 16px;
+
+}
+
+.panel{
+
+padding:20px 16px;
 
 }
 
@@ -2324,6 +2741,15 @@ Coming Soon
 
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
+const isMobile = window.matchMedia('(max-width:768px)').matches;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+if(isMobile || reduceMotion){
+
+document.getElementById('bg').style.display = 'none';
+
+}else{
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
@@ -2342,7 +2768,7 @@ alpha:true
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 document.getElementById('bg').appendChild(renderer.domElement);
 
@@ -2538,6 +2964,8 @@ camera.updateProjectionMatrix();
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 });
+
+}
 
 </script>
 
